@@ -12,10 +12,12 @@ print(df['Sales'].sum())
 
 #qno3
 #which product category has highest sales
+print("Categorisation of Profit")
 ad=df.groupby('Product_Category')['Profit'].sum()
-# print(ad)
+print(ad)
 # print(ad.max())
 print(ad.idxmax())
+ad=df.groupby('Product_Category')['Profit'].sum()
 
 
 #qno4
@@ -26,6 +28,8 @@ print(df['Discount'].mean())
 #qno5
 #which shopping mode is used frquently
 ad1=df['Ship_Mode'].value_counts()
+print("Shopiing Mode")
+print(ad1)
 print(ad1.idxmax())
 # print(ad1.max())
 
@@ -33,6 +37,8 @@ print(ad1.idxmax())
 
 #qno6
 #corelation between sales and profit
+print(df['Sales'].corr(df['Profit']))
+
 print(df['Sales'].corr(df['Profit']))
 
 

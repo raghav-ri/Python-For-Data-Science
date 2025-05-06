@@ -8,15 +8,10 @@ math_marks = [70, 80, 90]
 science_marks = [60, 70, 80]
 
 
-bar_width = 0.35
-
-
-r1 = np.arange(len(students))
-r2 = [x + bar_width for x in r1]
-
-
-plt.bar(r1, math_marks, color='b', width=bar_width, edgecolor='grey', label='Math')
-plt.bar(r2, science_marks, color='r', width=bar_width, edgecolor='grey', label='Science')
+bar_width = 0.2
+x=np.arange(len(students))
+plt.bar(x-bar_width/2, math_marks, color='b', width=bar_width, edgecolor='grey', label='Math')
+plt.bar(x+bar_width/2, science_marks, color='r', width=bar_width, edgecolor='grey', label='Science')
 
 
 plt.xlabel('Students', fontweight='bold')

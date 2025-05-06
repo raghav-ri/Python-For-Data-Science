@@ -33,3 +33,5 @@ plt.xlabel("Name")
 plt.ylabel("Marks")
 plt.title("Student Marks")
 plt.show()
+
+data['Normalized Marks']=(data['Marks']-data['Marks'].min())/(data['Marks'].max()-data['Marks'].min())

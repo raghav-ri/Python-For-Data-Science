@@ -27,7 +27,7 @@ df_clean=df[(df['math score']>=lower_bound)&(df['math score']<=upper_bound)]
 print(df_clean['math score'].head(20))
 
 sns.heatmap(df.corr(numeric_only=True),annot=True,fmt='.2f',cmap='coolwarm')
-plt.show()
+# plt.show()
 
 sns.boxplot(y=df_clean['math score'])
 #plt.show()

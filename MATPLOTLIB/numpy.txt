@@ -1,0 +1,348 @@
+### **1. Array Creation**
+These methods are used to create arrays.
+
+- **`np.array()`**: Creates an array from a list or tuple.
+  ```python
+  arr = np.array([1, 2, 3])
+  ```
+- **`np.zeros()`**: Creates an array filled with zeros.
+  ```python
+  arr = np.zeros((2, 3))  # 2x3 array of zeros
+  ```
+- **`np.ones()`**: Creates an array filled with ones.
+  ```python
+  arr = np.ones((3, 3))  # 3x3 array of ones
+  ```
+- **`np.empty()`**: Creates an uninitialized array.
+  ```python
+  arr = np.empty((2, 2))
+  ```
+- **`np.arange()`**: Creates an array with evenly spaced values.
+  ```python
+  arr = np.arange(0, 10, 2)  # [0, 2, 4, 6, 8]
+  ```
+- **`np.linspace()`**: Creates an array with evenly spaced values over a specified range.
+  ```python
+  arr = np.linspace(0, 1, 5)  # [0., 0.25, 0.5, 0.75, 1.]
+  ```
+- **`np.eye()`**: Creates an identity matrix.
+  ```python
+  arr = np.eye(3)  # 3x3 identity matrix
+  ```
+- **`np.random`**: Generates random numbers.
+  - `np.random.rand()`: Uniform distribution.
+  - `np.random.randn()`: Standard normal distribution.
+  - `np.random.randint()`: Random integers.
+  ```python
+  arr = np.random.rand(3, 3)
+  ```
+
+---
+
+### **2. Array Manipulation**
+These methods modify or reshape arrays.
+
+- **`np.reshape()`**: Reshapes an array without changing its data.
+  ```python
+  arr = np.arange(6).reshape(2, 3)
+  ```
+- **`np.transpose()`**: Transposes an array.
+  ```python
+  arr = np.transpose([[1, 2], [3, 4]])  # [[1, 3], [2, 4]]
+  ```
+- **`np.ravel()`**: Flattens an array into 1D.
+  ```python
+  arr = np.ravel([[1, 2], [3, 4]])  # [1, 2, 3, 4]
+  ```
+- **`np.concatenate()`**: Joins arrays along an axis.
+  ```python
+  arr = np.concatenate((a, b), axis=0)
+  ```
+- **`np.split()`**: Splits an array into multiple sub-arrays.
+  ```python
+  arr = np.split(a, 2)
+  ```
+- **`np.stack()`**: Stacks arrays along a new axis.
+  ```python
+  arr = np.stack((a, b), axis=1)
+  ```
+
+---
+
+### **3. Mathematical Operations**
+These methods perform mathematical computations.
+
+- **Basic Arithmetic**: `+`, `-`, `*`, `/`, `**` (element-wise operations).
+  ```python
+  arr = np.array([1, 2, 3]) * 2  # [2, 4, 6]
+  ```
+- **`np.sum()`**: Computes the sum of array elements.
+  ```python
+  total = np.sum(arr)
+  ```
+- **`np.mean()`**: Computes the mean.
+  ```python
+  avg = np.mean(arr)
+  ```
+- **`np.median()`**: Computes the median.
+  ```python
+  med = np.median(arr)
+  ```
+- **`np.std()`**: Computes the standard deviation.
+  ```python
+  std = np.std(arr)
+  ```
+- **`np.min()` / `np.max()`**: Finds the minimum/maximum.
+  ```python
+  min_val = np.min(arr)
+  max_val = np.max(arr)
+  ```
+- **`np.dot()`**: Computes the dot product.
+  ```python
+  result = np.dot(a, b)
+  ```
+- **`np.sqrt()`**: Computes the square root.
+  ```python
+  arr = np.sqrt([1, 4, 9])  # [1., 2., 3.]
+  ```
+- **`np.exp()`**: Computes the exponential.
+  ```python
+  arr = np.exp([1, 2, 3])
+  ```
+
+---
+
+### **4. Logical Operations**
+These methods perform comparisons and logical operations.
+
+- **`np.all()`**: Checks if all elements are `True`.
+  ```python
+  result = np.all(arr > 0)
+  ```
+- **`np.any()`**: Checks if any element is `True`.
+  ```python
+  result = np.any(arr > 0)
+  ```
+- **`np.where()`**: Returns indices where a condition is met.
+  ```python
+  indices = np.where(arr > 2)
+  ```
+- **`np.logical_and()` / `np.logical_or()`**: Logical operations.
+  ```python
+  result = np.logical_and(arr > 1, arr < 5)
+  ```
+
+---
+
+### **5. Indexing and Slicing**
+These methods help access or modify parts of arrays.
+
+- **Basic Indexing**: Access elements by index.
+  ```python
+  element = arr[0, 1]
+  ```
+- **Slicing**: Access subarrays.
+  ```python
+  subarray = arr[1:3, :]
+  ```
+- **Fancy Indexing**: Access elements using arrays of indices.
+  ```python
+  arr = np.array([10, 20, 30, 40])
+  result = arr[[0, 2]]  # [10, 30]
+  ```
+
+---
+
+### **6. Statistical Functions**
+These methods compute statistical measures.
+
+- **`np.percentile()`**: Computes the nth percentile.
+  ```python
+  p = np.percentile(arr, 50)  # Median
+  ```
+- **`np.corrcoef()`**: Computes the correlation coefficient.
+  ```python
+  corr = np.corrcoef(x, y)
+  ```
+- **`np.histogram()`**: Computes a histogram.
+  ```python
+  hist, bins = np.histogram(data, bins=5)
+  ```
+
+---
+
+### **7. Linear Algebra**
+These methods perform linear algebra operations.
+
+- **`np.linalg.inv()`**: Computes the inverse of a matrix.
+  ```python
+  inv = np.linalg.inv(matrix)
+  ```
+- **`np.linalg.det()`**: Computes the determinant.
+  ```python
+  det = np.linalg.det(matrix)
+  ```
+- **`np.linalg.eig()`**: Computes eigenvalues and eigenvectors.
+  ```python
+  eigvals, eigvecs = np.linalg.eig(matrix)
+  ```
+
+---
+
+### **8. Utility Functions**
+These methods provide utility operations.
+
+- **`np.unique()`**: Finds unique elements.
+  ```python
+  unique_vals = np.unique(arr)
+  ```
+- **`np.sort()`**: Sorts an array.
+  ```python
+  sorted_arr = np.sort(arr)
+  ```
+- **`np.argsort()`**: Returns indices that would sort an array.
+  ```python
+  indices = np.argsort(arr)
+  ```
+- **`np.isnan()`**: Checks for `NaN` values.
+  ```python
+  result = np.isnan(arr)
+  ```
+
+---
+
+Let me know if you'd like examples or further clarification on any of these!
+
+raghav-ri: what is reshape rearange explain in detail
+
+GitHub Copilot: ### **Reshape and Rearrange in NumPy**
+
+In NumPy, **reshape** and **rearrange** are operations used to modify the structure or order of elements in an array. These operations are essential for preparing data for analysis, machine learning models, or visualization.
+
+---
+
+### **1. Reshape**
+The `reshape()` method in NumPy is used to change the shape (dimensions) of an array without altering its data. It allows you to convert a 1D array into a 2D array, a 2D array into a 3D array, and so on, as long as the total number of elements remains the same.
+
+#### **Syntax**
+```python
+numpy.reshape(array, new_shape)
+```
+
+#### **Parameters**
+- **`array`**: The input array to be reshaped.
+- **`new_shape`**: A tuple specifying the desired shape. One dimension can be `-1`, which means it will be inferred automatically.
+
+#### **Examples**
+1. **Reshaping a 1D array into a 2D array**:
+   ```python
+   import numpy as np
+   arr = np.arange(6)  # [0, 1, 2, 3, 4, 5]
+   reshaped = arr.reshape(2, 3)  # 2 rows, 3 columns
+   print(reshaped)
+   # Output:
+   # [[0 1 2]
+   #  [3 4 5]]
+   ```
+
+2. **Using `-1` to infer dimensions**:
+   ```python
+   arr = np.arange(12)  # [0, 1, 2, ..., 11]
+   reshaped = arr.reshape(3, -1)  # 3 rows, infer columns
+   print(reshaped)
+   # Output:
+   # [[ 0  1  2  3]
+   #  [ 4  5  6  7]
+   #  [ 8  9 10 11]]
+   ```
+
+3. **Reshaping a 2D array into a 1D array**:
+   ```python
+   arr = np.array([[1, 2, 3], [4, 5, 6]])
+   reshaped = arr.reshape(-1)  # Flatten to 1D
+   print(reshaped)
+   # Output: [1 2 3 4 5 6]
+   ```
+
+#### **Key Points**
+- The total number of elements in the original and reshaped arrays must match.
+- Reshaping does not modify the original array; it returns a new array.
+
+---
+
+### **2. Rearrange**
+Rearranging refers to changing the order of elements in an array. This can be done using methods like `np.ravel()`, `np.flatten()`, `np.transpose()`, and `np.roll()`.
+
+#### **Common Rearranging Methods**
+
+1. **`np.ravel()`**:
+   - Flattens a multi-dimensional array into a 1D array.
+   - Returns a view (not a copy) of the original array if possible.
+   ```python
+   arr = np.array([[1, 2], [3, 4]])
+   flattened = np.ravel(arr)
+   print(flattened)
+   # Output: [1 2 3 4]
+   ```
+
+2. **`np.flatten()`**:
+   - Similar to `ravel()`, but always returns a copy of the array.
+   ```python
+   arr = np.array([[1, 2], [3, 4]])
+   flattened = arr.flatten()
+   print(flattened)
+   # Output: [1 2 3 4]
+   ```
+
+3. **`np.transpose()`**:
+   - Swaps the axes of an array (e.g., rows become columns).
+   ```python
+   arr = np.array([[1, 2], [3, 4]])
+   transposed = np.transpose(arr)
+   print(transposed)
+   # Output:
+   # [[1 3]
+   #  [2 4]]
+   ```
+
+4. **`np.roll()`**:
+   - Rolls the elements of an array along a specified axis.
+   ```python
+   arr = np.array([1, 2, 3, 4])
+   rolled = np.roll(arr, 2)
+   print(rolled)
+   # Output: [3 4 1 2]
+   ```
+
+5. **`np.flip()`**:
+   - Reverses the order of elements along a specified axis.
+   ```python
+   arr = np.array([1, 2, 3, 4])
+   flipped = np.flip(arr)
+   print(flipped)
+   # Output: [4 3 2 1]
+   ```
+
+---
+
+### **Differences Between Reshape and Rearrange**
+| **Aspect**         | **Reshape**                                   | **Rearrange**                                |
+|---------------------|-----------------------------------------------|---------------------------------------------|
+| **Purpose**         | Changes the shape (dimensions) of the array. | Changes the order of elements in the array. |
+| **Data Order**      | Data remains in the same order.              | Data order may change.                      |
+| **Methods**         | `reshape()`                                  | `ravel()`, `flatten()`, `transpose()`, etc. |
+| **Example**         | Convert 1D to 2D.                           | Reverse or roll elements.                   |
+
+---
+
+### **Practical Use Cases**
+1. **Reshape**:
+   - Preparing data for machine learning models (e.g., reshaping images into 2D or 3D arrays).
+   - Converting time-series data into a matrix for analysis.
+
+2. **Rearrange**:
+   - Flattening arrays for easier computation.
+   - Transposing matrices for linear algebra operations.
+   - Reversing or rolling data for specific algorithms.
+
+Let me know if you'd like further clarification or examples!

@@ -13,7 +13,7 @@
 
 
 
-# import pandas as pd
+# import pandas as pd`6790-`
 # df1=pd.read_csv('rv.csv')
 # print(df1.to_string()) # why data cleaning is required 1 empty cells 2.data in wrong format 3. wrong data 4. duplicates
 # by default dropna() method return a new Data Frame,and will not change the original but dropna(inplace=True) will not return a new Data Frame
