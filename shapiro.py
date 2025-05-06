@@ -8,3 +8,8 @@ if p_value<0.05:
     print("Data is normally Distributed {reject H0}")
 else:
     print("Data is normally distributed{failed to reject H0}")
+
+
+    
+# Null Hypothesis (H₀): The data is normally distributed.
+# Alternative Hypothesis (H₁): The data is not normally distributed.
